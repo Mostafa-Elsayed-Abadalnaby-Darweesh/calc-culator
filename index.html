@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="display">
+            <p id="main"></p>
+        </div>
+        <div class="row">
+        <div class="btns">
+            <button id="home" style="width: 400px;">First number <span id="firstt">(</span>)</button>
+            <button id="second" style="width: 400px;">second number <span id="secondd">(</span>)</button>
+        </div>
+        </div>
+        <div class="row">
+        <div class="btns">
+            <button id="resultplus">+</button>
+            <button id="resultminus">-</button>
+            <button id="resulttime">*</button>
+            <button id="resultdivide">÷</button>
+            <button id="resultpow">**</button>
+        </div>    
+        </div>   
+        <div class="row">
+            <div class="btns">
+                <button onclick="sin()">sin 
+                 <span>(first number)</span>
+                </button>
+                <button onclick="cos()">cos 
+                 <span>(first number)</span>
+                </button>
+                <button onclick="log();" >log
+                 <span>(first number)</span>
+                </button>
+                <button onclick="ceil()">ceil 
+                <span>(first number)</span>
+            </button>
+                <button onclick="floor()">floor 
+                <span>(first number)</span>
+            </button>
+            </div>    
+            </div>  
+            <div class="row">
+                <div class="btns">
+                    <button id="circ" style="width: 400px;">circumference <span id="names">r</span></button>
+                    <button id="area" style="width: 400px;">area <span id="r2">r</span></button>
+                    <button id="mo" style="width: 400px;">diameter <span id="dia">r</span></button>
+                </div>
+                </div>     
+    </div>
+    <script>
+        var x = 0;
+        var y = 0;
+        home.addEventListener('click' , function(){
+            x = Number(prompt("enter first number"));
+            firstt.textContent += x ;
+    })
+    second.addEventListener('click' , function(){
+            y = Number(prompt("enter second number"));
+            secondd.textContent += y ;
+    })
+    resultplus.addEventListener('click' , function(){
+        var z = x + y;
+        main.textContent=z;
+    })
+    resultminus.addEventListener('click' , function(){
+        var z = x - y;
+        main.textContent=z;
+    })
+    resulttime.addEventListener('click' , function(){
+        var z = x * y;
+        main.textContent=z;
+    })
+    resultdivide.addEventListener('click' , function(){
+        var z = x / y;
+        main.textContent=z;
+    })
+    resultpow.addEventListener('click' , function(){
+        var z = x ** 2;
+        main.textContent=z;
+    })
+    function sin()
+    {
+        main.textContent=Math.sin(x)
+    }
+    function cos()
+    {
+        main.textContent=Math.cos(x)
+    }
+    function log()
+    {
+        main.textContent=Math.log(x)
+    }
+    function ceil()
+    {
+        main.textContent=Math.ceil(x)
+    }
+    function floor()
+    {
+        main.textContent=Math.floor(x)
+    }
+    var pi =22/7;
+    var pi =3.14;
+    circ.addEventListener('click' , function(){
+        const pi = 22/7;
+        var r = prompt('enter radius')
+        var naame = r * 2 * pi;
+        main.textContent = naame;
+    });
+    area.addEventListener('click' , function(){
+        const pi = 22/7;
+        var r = prompt('enter radius')
+        var naame = r ** 2 * pi;
+        main.textContent = naame;
+    });
+    mo.addEventListener('click' , function(){
+        var r = prompt('enter radius')
+        var naame = r *2;
+        main.textContent = naame;
+    });
+    </script>
+</body>
+</html>
